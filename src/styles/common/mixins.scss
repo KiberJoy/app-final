@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Nunito&display=swap");
+
+@mixin app-font__Nunito($color, $size, $style, $weight, $line-height, $align) {
+  color: $color;
+  font-family: "Nunito", sans-serif;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $line-height;
+  text-align: $align;
+}
+
+@mixin app-font__Asap($color, $size, $style, $weight, $line-height, $align) {
+  color: $color;
+  font-family: "Asap", sans-serif;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $line-height;
+  text-align: $align;
+}
+
+@mixin app-text-overflow($property) {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $property;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}

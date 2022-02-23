@@ -1,0 +1,60 @@
+.app-button {
+  &__button {
+    @include app-font__Nunito(
+      $app-color_000000,
+      16px,
+      normal,
+      400,
+      26px,
+      center
+    );
+    background-color: $app-color_f4e041;
+    border-radius: 80px;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 16px;
+    position: relative;
+    width: 148px;
+    transition: 0.4s;
+    overflow: hidden;
+    &::after {
+      background-color: transparent;
+      border-radius: 80px;
+      content: "";
+      height: 0px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.4s;
+      width: 0px;
+    }
+    &:hover {
+      background-color: $app-color_ffe302;
+    }
+    &:focus {
+      &::after {
+        background-color: rgba($app-color_7e7e7e, 0.5);
+        height: 50px;
+        width: 120px;
+      }
+    }
+    &:active {
+      &::after {
+        height: 86px;
+        top: 0;
+        transform: translate(-50%, 0);
+        width: 134px;
+      }
+    }
+  }
+  &.app-disabled {
+    .app-button__button {
+      background-color: $app-color_b4b4b4;
+      color: $app-color_ffffff;
+      cursor: pointer;
+    }
+  }
+}

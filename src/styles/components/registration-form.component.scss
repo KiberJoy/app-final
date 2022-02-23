@@ -1,0 +1,253 @@
+.app-registration-form {
+  display: flex;
+  flex-direction: column;
+  & > .app-registration-form__input-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 43px;
+    row-gap: 50px;
+
+    & > .app-registration-form__input-list-input-field {
+      position: relative;
+      & > input {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          16px,
+          normal,
+          400,
+          26px,
+          start
+        );
+        background-color: $app-color_f8f8f8;
+        border-radius: 4px;
+        border: 1px solid $app-color_d0cfcf;
+        height: 54px;
+        outline: none;
+        padding: 14px 16px;
+        width: 100%;
+        &:focus {
+          border: 2px solid $app-color_00bdd3;
+          &.ng-invalid {
+            border: 2px solid $app-color_cb3d40;
+          }
+          & ~ label {
+            @include app-font__Nunito(
+              $app-color_00bdd3,
+              12px,
+              normal,
+              400,
+              17px,
+              start
+            );
+            background-color: $app-color_ffffff;
+            padding: 4px;
+            transform: translateY(-26px);
+            transition: all 0.4s ease-in-out;
+            &.ng-invalid {
+              background-color: $app-color_f8f8f8;
+              color: $app-color_cb3d40;
+            }
+          }
+
+          & ~ .helper-text {
+            & > .invalid-feedback {
+              &.ng-invalid {
+                color: $app-color_cb3d40;
+              }
+            }
+          }
+        }
+
+        &:focus.has-value.ng-valid {
+          & ~ label {
+            background-color: $app-color_f8f8f8;
+            color: $app-color_00bdd3;
+          }
+        }
+
+        &.has-value {
+          & ~ label {
+            @include app-font__Nunito(
+              $app-color_7e7e7e,
+              12px,
+              normal,
+              400,
+              17px,
+              start
+            );
+            background-color: $app-color_f8f8f8;
+            padding: 4px;
+            transform: translateY(-26px);
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+
+      & > label {
+        @include app-font__Nunito(
+          $app-color_7e7e7e,
+          16px,
+          normal,
+          400,
+          26px,
+          start
+        );
+        left: 16px;
+        pointer-events: none;
+        position: absolute;
+        top: calc(50% - 12px);
+      }
+
+      & > .helper-text {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          12px,
+          normal,
+          400,
+          17px,
+          start
+        );
+        left: 16px;
+        max-width: 210px;
+        position: absolute;
+        top: 58px;
+      }
+
+      & > .text-length {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          12px,
+          normal,
+          400,
+          17px,
+          start
+        );
+        max-width: 37px;
+        position: absolute;
+        right: 16px;
+        top: 58px;
+      }
+    }
+  }
+
+  & > .app-registration-form__checkbox-list {
+    & > .app-registration-form__checkbox-list-checkbox-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 48px;
+
+      & > div {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          16px,
+          normal,
+          400,
+          25px,
+          start
+        );
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  & > .app-registration-form__upload-list {
+    align-items: center;
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+
+    & > label {
+      @include app-font__Nunito(
+        rgba($app-color_000000, 0.87),
+        16px,
+        normal,
+        400,
+        26px,
+        center
+      );
+      background-color: $app-color_f8f8f8;
+      border-radius: 4px 0px 0px 4px;
+      border: 1px solid rgba($app-color_000000, 0.87);
+      cursor: pointer;
+      height: 54px;
+      padding: 14px 14px 14px 16px;
+      &.ng-invalid {
+        border: 2px solid $app-color_cb3d40;
+      }
+    }
+
+    & > .app-registration-form__upload-list-upload-field {
+      width: 100%;
+      & > input {
+        display: none;
+      }
+      & > div {
+        @include app-font__Nunito(
+          $app-color_7e7e7e,
+          16px,
+          normal,
+          400,
+          26px,
+          start
+        );
+        align-items: center;
+        background-color: $app-color_f8f8f8;
+        border-radius: 0px 4px 4px 0px;
+        border: 1px solid $app-color_d0cfcf;
+        border-left: none;
+        display: flex;
+        height: 54px;
+        padding: 0 16px;
+        width: 100%;
+        & > div {
+          @include app-text-overflow(1);
+        }
+        &:hover {
+          border: 1px solid rgba($app-color_000000, 0.87);
+          border-left: none;
+        }
+        &.ng-invalid {
+          border: 2px solid $app-color_cb3d40;
+          border-left: none;
+        }
+        &.has-value {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            16px,
+            normal,
+            400,
+            26px,
+            start
+          );
+        }
+      }
+    }
+
+    & > .helper-text {
+      @include app-font__Nunito(
+        rgba($app-color_000000, 0.87),
+        12px,
+        normal,
+        400,
+        17px,
+        start
+      );
+      left: 16px;
+      max-width: 210px;
+      position: absolute;
+      top: 58px;
+      & > .invalid-feedback {
+        &.ng-invalid {
+          color: $app-color_cb3d40;
+        }
+      }
+    }
+  }
+
+  & > .app-registration-form__submit {
+    & > .app-registration-form__submit-field {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

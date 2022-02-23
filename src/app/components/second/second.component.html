@@ -1,0 +1,13 @@
+<app-wrapper>
+  <div class="app-second__info">
+    <div class="app-second__info-header">Let's get acquainted</div>
+    <div class="app-second__info-subheader">I'm a good front-end developer</div>
+    <div class="app-second__info-text">What defines a good front-end developer is one that has skilled knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be building web interfaces with accessibility in mind. They should also be excited to learn, as the world of Front-End Development keeps evolving.</div>
+    <app-button [text]="'Sign up'" (click)="scroll()"></app-button>
+  </div>
+  <picture class="app-second__image-wrapper">
+    <source srcset="assets/image-296x260.svg" media="(max-width: 1023px) and (min-width: 768px)">
+    <source srcset="assets/image-328x287.svg" media="(max-width: 767px) and (min-width: 360px)">
+    <img class="app-second__image-wrapper-item" src="assets/image-387x340.svg" alt="">
+  </picture>
+</app-wrapper>

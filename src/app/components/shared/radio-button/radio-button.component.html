@@ -1,0 +1,19 @@
+<div class="app-radio-buttons__wrapper">
+  <div class="app-radio-buttons__wrapper-list">
+    <div
+      class="app-radio-buttons__wrapper-list-item"
+      *ngFor="let item of items"
+    >
+      <input
+        type="radio"
+        name="item"
+        [id]="item.id"
+        [value]="item"
+        [formControl]="control">
+      <label
+        [for]="item.id"
+      >
+        {{item.name}}
+      </label>
+    </div>
+</div>

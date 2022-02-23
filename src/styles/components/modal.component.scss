@@ -1,0 +1,56 @@
+.app-modal {
+  align-items: center;
+  background-color: rgba($app-color_000000, 0.5);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 101;
+  & > .app-modal__wrapper {
+    background-color: $app-color_ffffff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 452px;
+
+    & > .app-modal__wrapper-header {
+      @include app-font__Nunito(
+        $app-color_000000,
+        22px,
+        normal,
+        400,
+        31px,
+        start
+      );
+      margin-bottom: 6px;
+    }
+
+    & > .app-modal__wrapper-subheader {
+      @include app-font__Nunito(
+        rgba($app-color_000000, 0.87),
+        16px,
+        normal,
+        400,
+        26px,
+        start
+      );
+      margin-bottom: 33px;
+    }
+
+    & > app-button {
+      align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .app-modal {
+    & > .app-modal__wrapper {
+      width: 328px;
+    }
+  }
+}

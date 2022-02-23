@@ -1,0 +1,56 @@
+#app-footer {
+  background-color: $app-color_f8f8f8;
+  background-image: url("https://cdn.kiberjoy.ru/footprint-972x177.svg");
+  background-position-x: calc(50% + 589px);
+  background-position-y: 6px;
+  background-repeat: no-repeat;
+  display: block;
+  & > .app-wrapper {
+    align-items: flex-end;
+    height: 240px;
+    justify-content: center;
+    max-width: 100%;
+
+    & > .app-footer__text {
+      @include app-font__Asap(
+        $app-color_000000,
+        16px,
+        normal,
+        400,
+        25px,
+        center
+      );
+      align-items: center;
+      background-color: $app-color_ffffff;
+      border-top: 1px solid $app-color_e0e0e0;
+      display: flex;
+      height: 57px;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  #app-footer {
+    background-image: url("https://cdn.kiberjoy.ru/footprint-467x177.svg");
+    background-position-x: 100%;
+    background-position-y: 6px;
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #app-footer {
+    background-image: url("https://cdn.kiberjoy.ru/footprint-467x177.svg");
+    background-position-x: 100%;
+    background-position-y: 6px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  #app-footer {
+    background-image: url("https://cdn.kiberjoy.ru/footprint-328x124.svg");
+    background-position-x: 100%;
+    background-position-y: 60px;
+  }
+}

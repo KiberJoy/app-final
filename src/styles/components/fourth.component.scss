@@ -1,0 +1,62 @@
+#app-fourth {
+  & > .app-wrapper {
+    align-items: center;
+    flex-direction: column;
+    padding: 175px 0px 0px 0px;
+
+    & > .app-fourth__header {
+      @include app-font__Nunito(
+        rgba($app-color_000000, 0.87),
+        40px,
+        normal,
+        400,
+        40px,
+        center
+      );
+      margin-bottom: 10px;
+    }
+    & > .app-fourth__subheader {
+      @include app-font__Nunito(
+        rgba($app-color_000000, 0.87),
+        22px,
+        normal,
+        400,
+        28px,
+        center
+      );
+      margin-bottom: 32px;
+    }
+    & > app-registration-form {
+      max-width: 380px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  #app-fourth {
+    & > .app-wrapper {
+      padding: 175px 60px 0px 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #app-fourth {
+    & > .app-wrapper {
+      padding: 175px 32px 0px 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  #app-fourth {
+    & > .app-wrapper {
+      padding: 145px 16px 0 16px;
+
+      & > app-registration-form {
+        max-width: 328px;
+      }
+    }
+  }
+}

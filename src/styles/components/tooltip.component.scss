@@ -1,0 +1,17 @@
+.app-tooltip {
+  @include app-font__Nunito($app-color_ffffff, 16px, normal, 400, 26px, start);
+  background: $app-color_232f34;
+  border-radius: 4px;
+  left: 0;
+  max-width: 285px;
+  opacity: 0;
+  padding: 3px 16px;
+  position: absolute;
+  top: 0;
+  word-break: break-word;
+  z-index: 1000;
+}
+
+.app-tootlip-show {
+  opacity: 1;
+}

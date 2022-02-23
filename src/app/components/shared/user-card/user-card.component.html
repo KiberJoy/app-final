@@ -1,0 +1,65 @@
+<div class="app-user-card__list">
+  <div
+    class="app-user-card__list-item"
+    *ngFor="let user of _users"
+  >
+    <img
+      class="app-user-card__list-item-avatar"
+      [src]="user.photo"
+      [alt]="user.name + 'photo'"
+    >
+    <div class="app-user-card__list-item-info">
+
+      <div class="app-user-card__list-item-info-container">
+        <div
+          class="app-user-card__list-item-info-container-name"
+          appTooltip
+          [inputTooltipTextBind]="user.name"
+        >
+          {{user.name}}
+        </div>
+      </div>
+
+
+      <div class="app-user-card__list-item-info-container">
+        <div
+          class="app-user-card__list-item-info-container-position"
+          appTooltip
+          [inputTooltipTextBind]="user.position"
+        >
+          {{user.position}}
+        </div>
+      </div>
+
+      <div class="app-user-card__list-item-info-container">
+        <a
+          [href]="'mailto:' + user.email"
+          class="app-user-card__list-item-info-container-email"
+          appTooltip
+          [inputTooltipTextBind]="user.email"
+        >
+          {{user.email}}
+        </a>
+      </div>
+
+      <div class="app-user-card__list-item-info-container">
+        <a
+          [href]="'tel:' + user.phone"
+          class="app-user-card__list-item-info-container-phone"
+          appTooltip
+          [inputTooltipTextBind]="user.phone | mask: '+00 (000) 000 00 00'"
+        >
+          {{user.phone | mask: '+00 (000) 000 00 00'}}
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-button
+  *ngIf="_users.length < _totalUsers"
+  class="app-user-card__button"
+  [text]="'Show more'"
+  (click)="loadMoreUsers()"
+></app-button>

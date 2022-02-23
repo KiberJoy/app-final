@@ -1,0 +1,81 @@
+<app-wrapper>
+  <a href="/" class="app-header__logo">
+    <img
+      class="app-header__logo-item"
+      [src]="_logoUrl"
+      alt="desktop logo"
+    >
+  </a>
+
+  <div
+    class="app-header__list"
+    *ngIf="_isDesktopHeader"
+  >
+    <div
+      class="app-header__list-item"
+      *ngFor="let link of _links"
+    >
+      <a
+        [href]="[link.url]"
+        class="app-header__list-item-link"
+        [ngClass]="{'active': link.active}"
+      >
+        {{link.name}}
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="app-header__mobile-list"
+    *ngIf="!_isDesktopHeader"
+  >
+    <button
+      aria-label="mobile menu button"
+      class="app-header__mobile-list-button"
+      (click)="mobileMenuToggle()"
+    >
+      <img
+        class="app-header__mobile-list-button-item"
+        [src]="_mobileMenuUrl"
+        alt="mobile menu button"
+      >
+    </button>
+
+    <div
+      class="app-header__mobile-list-body"
+      *ngIf="_isVisible" (click)="mobileMenuToggle()"
+    >
+      <div
+        class="app-header__mobile-list-body-wrapper"
+        (click)="stop($event)"
+      >
+        <div class="app-header__mobile-list-body-wrapper-logo">
+          <a href="/" class="app-header__mobile-list-body-wrapper-logo-link">
+            <img
+              class="app-header__mobile-list-body-wrapper-logo-link-item"
+              [src]="_logoUrl"
+              alt="mobile logo"
+            >
+          </a>
+        </div>
+
+        <div class="app-header__mobile-list-navigation-wrapper">
+          <div
+            class="app-header__mobile-list-navigation-wrapper-list"
+            *ngFor="let list of _mobileLinks"
+          >
+            <a
+              [href]="link.url"
+              *ngFor="let link of list"
+              class="app-header__mobile-list-navigation-wrapper-list-item"
+              [ngClass]="{'active': link.active}"
+              (click)="mobileMenuToggle()"
+            >
+              {{link.name}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-wrapper>

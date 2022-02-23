@@ -1,0 +1,91 @@
+#app-first {
+  background-color: $app-color_edecea;
+  background-image: url("https://cdn.kiberjoy.ru/banner_photo.webp");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  padding-top: 60px;
+  & > .app-wrapper {
+    align-items: center;
+    height: 650px;
+    justify-content: flex-start;
+    padding: 0;
+    & > .app-first__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      & > .app-first__info-header {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          40px,
+          normal,
+          400,
+          40px,
+          start
+        );
+        margin-bottom: 21px;
+        max-width: 670px;
+      }
+      & > .app-first__info-text {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          16px,
+          normal,
+          400,
+          26px,
+          start
+        );
+        margin-bottom: 24px;
+        max-width: 527px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  #app-first {
+    & > .app-wrapper {
+      padding: 0 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #app-first {
+    background-position: 55% 30px;
+    background-size: cover;
+    & > .app-wrapper {
+      height: 500px;
+      padding: 0 32px;
+      & > .app-first__info {
+        & > .app-first__info-header {
+          max-width: 410px;
+        }
+        & > .app-first__info-text {
+          max-width: 424px;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  #app-first {
+    background-position: 55% 60px;
+    background-size: cover;
+    & > .app-wrapper {
+      height: 469px;
+      padding: 0 16px;
+      & > .app-first__info {
+        & > .app-first__info-header {
+          max-width: 240px;
+        }
+        & > .app-first__info-text {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+}

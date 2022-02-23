@@ -1,0 +1,74 @@
+.app-radio-buttons__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+
+  & > .app-radio-buttons__wrapper-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 100%;
+
+    & > .app-radio-buttons__wrapper-list-item {
+      & > input[type="radio"] {
+        display: none;
+
+        &:not(:checked) ~ label {
+          &::after {
+            border: 1px solid $app-color_d0cfcf;
+          }
+        }
+
+        &:checked ~ label {
+          &::before {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+          }
+        }
+      }
+
+      & > label {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          16px,
+          normal,
+          400,
+          25px,
+          start
+        );
+        cursor: pointer;
+        display: block;
+        padding-left: 32px;
+        position: relative;
+
+        &::after,
+        &::before {
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+        }
+        &::after {
+          border: 1px solid $app-color_00bdd3;
+          box-sizing: border-box;
+          height: 20px;
+          left: 0px;
+          top: calc(50% - 10px);
+          width: 20px;
+        }
+        &::before {
+          background-color: $app-color_00bdd3;
+          box-sizing: border-box;
+          height: 10px;
+          left: 5px;
+          opacity: 0;
+          top: calc(50% - 5px);
+          transform: scale(3);
+          transition: 0.4s ease-in-out 0s;
+          visibility: hidden;
+          width: 10px;
+        }
+      }
+    }
+  }
+}

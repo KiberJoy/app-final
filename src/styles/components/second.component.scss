@@ -1,0 +1,153 @@
+#app-second {
+  & > .app-wrapper {
+    align-items: center;
+    column-gap: 10px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 180px 0px 0px 0px;
+
+    & > .app-second__info {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      max-width: 680px;
+
+      & > .app-second__info-header {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          40px,
+          normal,
+          400,
+          40px,
+          right
+        );
+        margin-bottom: 10px;
+      }
+
+      & > .app-second__info-subheader {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          22px,
+          normal,
+          400,
+          28px,
+          right
+        );
+        margin-bottom: 20px;
+      }
+
+      & > .app-second__info-text {
+        @include app-font__Nunito(
+          rgba($app-color_000000, 0.87),
+          16px,
+          normal,
+          400,
+          26px,
+          right
+        );
+        margin-bottom: 32px;
+      }
+    }
+
+    & > .app-second__image-wrapper {
+      height: 340px;
+      width: 387px;
+      & > .app-second__image-wrapper-item {
+        height: 340px;
+        width: 387px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  #app-second {
+    & > .app-wrapper {
+      column-gap: 40px;
+      padding: 175px 60px 0px 60px;
+
+      & > .app-second__info {
+        max-width: 477px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #app-second {
+    & > .app-wrapper {
+      column-gap: 40px;
+      padding: 175px 32px 0px 32px;
+
+      & > .app-second__info {
+        max-width: 396px;
+      }
+
+      & > .app-second__image-wrapper {
+        height: 260px;
+        width: 296px;
+        & > .app-second__image-wrapper-item {
+          height: 260px;
+          width: 296px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  #app-second {
+    & > .app-wrapper {
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: center;
+      padding: 145px 16px 0 16px;
+
+      & > .app-second__info {
+        max-width: 328px;
+        align-items: flex-start;
+        & > .app-second__info-header {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            40px,
+            normal,
+            400,
+            40px,
+            start
+          );
+        }
+
+        & > .app-second__info-subheader {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            22px,
+            normal,
+            400,
+            28px,
+            start
+          );
+        }
+
+        & > .app-second__info-text {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            16px,
+            normal,
+            400,
+            26px,
+            start
+          );
+        }
+      }
+      & > .app-second__image-wrapper {
+        margin-bottom: 40px;
+        height: 287px;
+        width: 328px;
+        & > .app-second__image-wrapper-item {
+          height: 287px;
+          width: 328px;
+        }
+      }
+    }
+  }
+}

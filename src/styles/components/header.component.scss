@@ -1,0 +1,186 @@
+#app-header {
+  background-color: $app-color_ffffff;
+  box-shadow: -1px -1px 5px rgba($app-color_000000, 0.15),
+    0px 4px 15px rgba($app-color_000000, 0.15);
+
+  & > .app-wrapper {
+    align-items: center;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0;
+
+    & > .app-header__logo {
+      height: 26px;
+      width: 104px;
+      & > .app-header__logo-item {
+        height: 26px;
+        width: 104px;
+      }
+    }
+
+    & > .app-header__list {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      max-width: 489px;
+      width: 100%;
+
+      & > .app-header__list-item {
+        & > .app-header__list-item-link {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            16px,
+            normal,
+            400,
+            26px,
+            center
+          );
+          display: block;
+          text-decoration: none;
+          transition: 0.4s;
+
+          &:hover {
+            color: $app-color_00bdd3;
+          }
+
+          &.active {
+            color: $app-color_00bdd3;
+            position: relative;
+            &::before {
+              background-color: rgba($app-color_00bdd3, 0.1);
+              border-radius: 4px;
+              content: "";
+              height: 26px;
+              left: -15px;
+              padding: 7px 16px;
+              position: absolute;
+              top: -7px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    & > .app-header__mobile-list {
+      & > .app-header__mobile-list-button {
+        align-items: center;
+        background-color: $app-color_ffffff;
+        border: none;
+        display: flex;
+        height: 24px;
+        justify-content: center;
+        width: 24px;
+        & > .app-header__mobile-list-button-item {
+          height: 24px;
+          width: 24px;
+        }
+      }
+      & > .app-header__mobile-list-body {
+        background-color: rgba($app-color_000000, 0.5);
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 5;
+
+        & > .app-header__mobile-list-body-wrapper {
+          align-items: flex-start;
+          background-color: $app-color_ffffff;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          max-width: 270px;
+          & > .app-header__mobile-list-body-wrapper-logo {
+            align-items: center;
+            border-bottom: 1px solid $app-color_e0e0e0;
+            display: flex;
+            flex-shrink: 0;
+            height: 60px;
+            justify-content: flex-start;
+            padding: 0 16px;
+            width: 100%;
+            & > .app-header__mobile-list-body-wrapper-logo-link {
+              height: 26px;
+              width: 104px;
+            }
+          }
+
+          & > .app-header__mobile-list-navigation-wrapper {
+            overflow-y: auto;
+            width: 100%;
+            & > .app-header__mobile-list-navigation-wrapper-list {
+              border-top: 1px solid $app-color_e0e0e0;
+              display: flex;
+              flex-direction: column;
+              padding: 30px 16px;
+              row-gap: 22px;
+
+              &:first-of-type {
+                border-top: none;
+              }
+
+              & > .app-header__mobile-list-navigation-wrapper-list-item {
+                @include app-font__Nunito(
+                  $app-color_000000,
+                  16px,
+                  normal,
+                  400,
+                  26px,
+                  start
+                );
+                display: block;
+                text-decoration: none;
+                transition: 0.4s;
+                &:hover {
+                  color: $app-color_00bdd3;
+                }
+
+                &.active {
+                  color: $app-color_00bdd3;
+                  position: relative;
+                  &::before {
+                    background-color: rgba($app-color_00bdd3, 0.1);
+                    border-radius: 4px;
+                    content: "";
+                    height: 26px;
+                    left: -8px;
+                    padding: 7px 16px;
+                    position: absolute;
+                    top: -7px;
+                    width: calc(100% - 16px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  #app-header {
+    & > .app-wrapper {
+      padding: 0 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #app-header {
+    & > .app-wrapper {
+      padding: 0 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  #app-header {
+    & > .app-wrapper {
+      padding: 0 16px;
+    }
+  }
+}

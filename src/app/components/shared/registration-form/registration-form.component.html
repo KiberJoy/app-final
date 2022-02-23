@@ -1,0 +1,142 @@
+<form class="app-registration-form" action="" [formGroup]="registrationForm" novalidate>
+  <div class="app-registration-form__input-list">
+    <div class="app-registration-form__input-list-input-field">
+      <input
+        id="firstName"
+        type="text"
+        formControlName="firstName"
+        [class.has-value]="!!getFormControlByName('firstName')?.value"
+      >
+
+      <label
+        for="firstName"
+        [ngClass]="{'ng-invalid': myForm.firstName.errors}"
+      >Your name</label>
+
+      <div class="helper-text">
+        <div class="invalid-feedback"
+          *ngIf="myForm.firstName.errors"
+          [ngClass]="{'ng-invalid': myForm.firstName.errors}"
+        >
+          {{_errors.firstName}}
+        </div>
+      </div>
+
+      <div
+        class="text-length"
+        *ngIf="myForm.firstName.touched || myForm.firstName.dirty"
+      >
+        {{_firstNameLength}} / n
+      </div>
+    </div>
+    <div class="app-registration-form__input-list-input-field">
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        [class.has-value]="!!getFormControlByName('email')?.value"
+      >
+      <label
+        for="email"
+        [ngClass]="{'ng-invalid': myForm.email.errors}"
+      >Email</label>
+
+      <div class="helper-text">
+
+        <div class="invalid-feedback"
+          *ngIf="myForm.email.errors"
+          [ngClass]="{'ng-invalid': myForm.email.errors}"
+        >
+          {{_errors.email}}
+        </div>
+
+      </div>
+      <div
+        class="text-length"
+        *ngIf="myForm.email.touched || myForm.email.dirty"
+      >
+        {{_emailLength}} / n
+      </div>
+    </div>
+    <div class="app-registration-form__input-list-input-field">
+      <input
+        id="phoneNumber"
+        type="text"
+        formControlName="phoneNumber"
+        mask="+00 (000) 000 00 00"
+        [class.has-value]="!!getFormControlByName('phoneNumber')?.value"
+      >
+      <label
+        for="phoneNumber"
+        [ngClass]="{'ng-invalid': myForm.phoneNumber.errors}"
+      >Phone</label>
+
+      <div class="helper-text">
+
+        <div class="invalid-feedback"
+          *ngIf="myForm.phoneNumber.errors"
+          [ngClass]="{'ng-invalid': myForm.phoneNumber.errors}"
+        >
+          {{_errors.phoneNumber}}
+        </div>
+
+      </div>
+      <div
+        class="text-length"
+        *ngIf="myForm.phoneNumber.touched || myForm.phoneNumber.dirty"
+      >
+        {{_phoneNumberLength}} / n
+      </div>
+    </div>
+  </div>
+
+  <div class="app-registration-form__checkbox-list">
+    <div class="app-registration-form__checkbox-list-checkbox-field" *ngIf="_positions.length">
+      <div>Select your position</div>
+      <app-radio-button [items]="_positions" [control]="positionControl"></app-radio-button>
+    </div>
+  </div>
+
+  <div class="app-registration-form__upload-list">
+    <label
+      for="imageUpload"
+      [ngClass]="{'ng-invalid': myForm.photo.errors && !myForm.photo.errors?.required}"
+    >Upload</label>
+
+    <div class="app-registration-form__upload-list-upload-field">
+      <input
+        id="imageUpload"
+        type='file'
+        accept=".jpg, .jpeg"
+        (change)="uploadFile($event)"
+      >
+      <div
+        [ngClass]="{'ng-invalid': myForm.photo.errors && !myForm.photo.errors?.required}"
+        [class.has-value]="!!getFormControlByName('photo')?.value"
+      >
+        <div id="file-chosen">Upload your photo</div>
+      </div>
+    </div>
+
+    <div class="helper-text">
+      <div class="invalid-feedback"
+        *ngIf="myForm.photo.errors"
+        [ngClass]="{'ng-invalid': myForm.photo.errors && !myForm.photo.errors?.required}"
+      >
+        {{_errors.photo}}
+      </div>
+
+    </div>
+  </div>
+  <div class="app-registration-form__submit">
+    <div class="app-registration-form__submit-field">
+      <app-button
+        [text]="'Sign up'"
+        [attr.disabled]="registrationForm.invalid"
+        [ngClass]="{'app-disabled': registrationForm.invalid}"
+        (click)="onSubmit()"
+      ></app-button>
+    </div>
+  </div>
+</form>
+<app-modal *ngIf="_isModalVisible" (onHide)="hideModal()"></app-modal>

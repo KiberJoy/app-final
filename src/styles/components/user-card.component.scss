@@ -1,0 +1,135 @@
+.app-user-card__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  & > .app-user-card__list-item {
+    align-items: center;
+    background-color: $app-color_ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 313px;
+    padding: 36px 30px 0px 30px;
+    width: 370px;
+
+    & > .app-user-card__list-item-avatar {
+      border-radius: 50%;
+      height: 70px;
+      margin-bottom: 15px;
+      width: 70px;
+    }
+
+    & > .app-user-card__list-item-info {
+      max-width: 310px;
+      width: 100%;
+      & > .app-user-card__list-item-info-container {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        & > .app-user-card__list-item-info-container-name {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            22px,
+            normal,
+            400,
+            28px,
+            center
+          );
+          @include app-text-overflow(2);
+          margin-bottom: 4px;
+        }
+
+        & > a,
+        div {
+          @include app-font__Nunito(
+            rgba($app-color_000000, 0.87),
+            16px,
+            normal,
+            400,
+            26px,
+            center
+          );
+          text-decoration: none;
+
+          &.app-user-card__list-item-info-container-position {
+            @include app-text-overflow(3);
+          }
+
+          &.app-user-card__list-item-info-container-email {
+            @include app-text-overflow(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.app-user-card__button {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 2559px) and (min-width: 1024px) {
+  .app-user-card__list {
+    gap: 29px;
+    & > .app-user-card__list-item {
+      height: 313px;
+      width: 282px;
+      & > .app-user-card__list-item-info {
+        max-width: 222px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .app-user-card__list {
+    gap: 16px;
+    & > .app-user-card__list-item {
+      height: 313px;
+      width: 344px;
+      & > .app-user-card__list-item-info {
+        max-width: 284px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 360px) {
+  .app-user-card__list {
+    gap: 20px;
+
+    & > .app-user-card__list-item {
+      height: 313px;
+      width: 328px;
+
+      & > .app-user-card__list-item-info {
+        max-width: 268px;
+
+        & > .app-user-card__list-item-info-container {
+          & > .app-user-card__list-item-info-container-name {
+            @include app-font__Nunito(
+              rgba($app-color_000000, 0.87),
+              22px,
+              normal,
+              400,
+              31px,
+              center
+            );
+          }
+
+          & > div {
+            &.app-user-card__list-item-info-container-position {
+              @include app-text-overflow(2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
