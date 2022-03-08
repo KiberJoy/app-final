@@ -48,6 +48,7 @@ jobs:
           npm install -g @angular/cli@12
           npm install
           ng build --prod
+          cd ./dist/abz-test-app
           git init
           git add --all
           git config --global user.email "worker@github.com"
