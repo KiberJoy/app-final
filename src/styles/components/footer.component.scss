@@ -1,6 +1,6 @@
 #app-footer {
   background-color: $app-color_f8f8f8;
-  background-image: url("https://cdn.kiberjoy.ru/footprint-972x177.svg");
+  background-image: url("/assets/footprint-972x177.svg");
   background-position-x: calc(50% + 589px);
   background-position-y: 6px;
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 2559px) and (min-width: 1024px) {
   #app-footer {
-    background-image: url("https://cdn.kiberjoy.ru/footprint-467x177.svg");
+    background-image: url("/assets/footprint-467x177.svg");
     background-position-x: 100%;
     background-position-y: 6px;
   }
@@ -41,7 +41,7 @@
 
 @media screen and (max-width: 1023px) and (min-width: 768px) {
   #app-footer {
-    background-image: url("https://cdn.kiberjoy.ru/footprint-467x177.svg");
+    background-image: url("/assets/footprint-467x177.svg");
     background-position-x: 100%;
     background-position-y: 6px;
   }
@@ -49,7 +49,7 @@
 
 @media screen and (max-width: 767px) and (min-width: 360px) {
   #app-footer {
-    background-image: url("https://cdn.kiberjoy.ru/footprint-328x124.svg");
+    background-image: url("/assets/footprint-328x124.svg");
     background-position-x: 100%;
     background-position-y: 60px;
   }

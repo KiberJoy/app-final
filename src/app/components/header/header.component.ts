@@ -10,8 +10,8 @@ import { AbstractComponent } from '../abstract/abstract.component';
 })
 export class HeaderComponent extends AbstractComponent implements OnInit {
 
-  public _logoUrl: string = 'https://cdn.kiberjoy.ru/logo.svg';
-  public _mobileMenuUrl: string = 'https://cdn.kiberjoy.ru/menu.svg';
+  public _logoUrl: string = '/assets/logo.svg';
+  public _mobileMenuUrl: string = '/assets/menu.svg';
   public _isVisible: boolean = false;
   public _isDesktopHeader!: boolean;
   public _links: HeaderLinksModel[] = [
