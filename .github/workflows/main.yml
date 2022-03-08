@@ -55,6 +55,7 @@ jobs:
           git config --global user.name "KiberJoy"
           git commit -am "build"
           git remote add origin "https://${{ secrets.GHPAGES_USER }}:${{ secrets.GHPAGES_PASS }}@github.com/KiberJoy/kiberjoy.github.io.git"
+          git pull origin master
           git push --set-upstream origin master
 
       # Extract metadata (tags, labels) for Docker
