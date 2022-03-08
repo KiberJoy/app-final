@@ -51,8 +51,8 @@ jobs:
           cd ./dist/abz-test-app
           git init
           git add --all
-          git config --global user.email "worker@github.com"
-          git config --global user.name "Github Worker"
+          git config --global user.email "kiberjoy@gmail.com"
+          git config --global user.name "KiberJoy"
           git commit -am "build"
           git remote add origin https://github.com/KiberJoy/kiberjoy.github.io.git
           git push --set-upstream origin master
