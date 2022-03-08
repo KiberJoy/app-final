@@ -45,11 +45,13 @@ jobs:
       - name: Build and push to build repo
         run: |
           sudo apt install nodejs npm
-          npm install -g @angular/cli
+          npm install -g @angular/cli@12
           npm install
           ng build --prod
           git init
           git add --all
+          git config --global user.email "worker@github.com"
+          git config --global user.name "Github Worker"
           git commit -am "build"
           git remote add origin https://github.com/KiberJoy/kiberjoy.github.io.git
           git push --set-upstream origin master
