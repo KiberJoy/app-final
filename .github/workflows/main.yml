@@ -46,7 +46,7 @@ jobs:
           
       - name: Build and push to build repo
         run: |
-              apt install nodejs npm
+              sudo apt install nodejs npm
               npm install -g @angular/cli@12
               ng build --prod
               git init
