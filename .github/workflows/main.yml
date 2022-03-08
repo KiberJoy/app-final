@@ -54,7 +54,7 @@ jobs:
           git config --global user.email "kiberjoy@gmail.com"
           git config --global user.name "KiberJoy"
           git commit -am "build"
-          git remote add origin https://github.com/KiberJoy/kiberjoy.github.io.git
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/KiberJoy/kiberjoy.github.io.git"
           git push --set-upstream origin master
 
       # Extract metadata (tags, labels) for Docker
